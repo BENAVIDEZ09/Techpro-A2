@@ -1,0 +1,27 @@
+package com.tutorialspoint;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class ScannerDemo {
+   public static void main(String[] args) throws FileNotFoundException {
+
+      // create a new scanner with a file as input
+      Scanner scanner = new Scanner(new File("properties.txt"));
+         
+      while (scanner.hasNext()) {
+         
+         // check if the scanner's next token is a Double
+         if(scanner.hasNextDouble()){
+            // print what is scanned
+            System.out.println(scanner.next());		 
+         } else {
+            scanner.next();
+         }
+      }
+
+      // close the scanner
+      scanner.close();
+   }
+}
